@@ -16,7 +16,7 @@
                 <div class="video fade-in-video">
                     <video controls muted autoplay>
                         <source src="Videos/Curry-Vegetariano.mp4" type="video/mp4" id="vidsource">
-                        <track kind="captions" src="" srclang="es" label="Spanish" class="subtitulos">
+                        <track kind="captions" src="captions.vtt" srclang="es" label="Spanish" id="subtitulos">
                     </video>
                 </div>   
             </div>
@@ -24,13 +24,13 @@
             <div class="video-list fade-in-list">
                 <div class="vid">
                     <video src="Videos/Hamburgesa-Pavo.mp4" muted>
-                        <track kind="captions" src="nodisponible" srclang="es" label="Spanish">
+                        <track kind="captions" src="" srclang="es" label="Spanish">
                     </video>
                     <h3 class="title">Hamburguesas de Pavo</h3>
                 </div>
                 <div class="vid">
                     <video src="Videos/Pancakes-Avena-Platano.mp4" muted>
-                        <track kind="captions" src="nodisponible" srclang="es" label="Spanish">
+                        <track kind="captions" src="" srclang="es" label="Spanish">
                     </video>
                     <h3 class="title">Hot Cakes de Avena</h3>
                 </div>
@@ -67,7 +67,7 @@
         let listVideo = document.querySelectorAll('.video-list .vid');
         let mainVideo = document.querySelector('.main-video video');
         // let text = document.querySelector('.main-video .title');
-        let sub = document.querySelector('.subtitulos');
+        let subtitulos = document.getElementById('subtitulos');
         // let caps = document.querySelectorAll('.video-list .vid track');
 
         listVideo.forEach(video => {
@@ -77,10 +77,19 @@
                 if(video.classList.contains('active')){
                     let source = video.children[0].getAttribute('src');
                     mainVideo.src = source;
-                    let caps = document.getElementsByTagName('track').src;
-                    sub.src = caps;
+                    // let caps = document.getElementsByTagName('track').getAttribute('src');
+                    // subtitulos.src = caps;
             };
+
+            if (mainVideo.getAttribute('src') != 'Videos/Curry-Vegetariano.mp4') {
+                subtitulos.src = 'No Disponible';
+                console.log('THIS WORKS')
+            } else {
+                subtitulos.src = 'captions.vtt';
+            }
             };
+
+        
         });
 
     </script>
