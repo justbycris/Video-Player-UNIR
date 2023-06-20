@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabajo 2: Reproductor de video utilizando estandares web. Cristina Gtz. Name</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h3 class="heading"> MI-YOUTUBE :)</h3>
+    <div class="container">
+  
+            <div class="main-video">
+                <div class="video fade-in-video">
+                    <video controls muted autoplay>
+                        <source src="Videos/Curry-Vegetariano.mp4" type="video/mp4">
+                        <track kind="captions" src="" srclang="es" label="Spanish" class="subtitulos">
+                        <h3 class="title">Video title </h3>
+                    </video>
+                </div>   
+            </div>
+
+            <div class="video-list fade-in-list">
+                <div class="vid">
+                    <video src="Videos/Hamburgesa-Pavo.mp4" muted></video>
+                    <h3 class="title">Hamburguesas de Pavo</h3>
+                </div>
+                <div class="vid">
+                    <video src="Videos/Pancakes-Avena-Platano.mp4" muted></video>
+                    <h3 class="title">Hot Cakes de Avena</h3>
+                </div>
+                <div class="vid">
+                    <video src="Videos/Salmon.mp4" muted></video>
+                    <h3 class="title">Salmon</h3>
+                </div>
+                <div class="vid">
+                    <video src="Videos/Chilaquiles-Veganos.mp4" muted></video>
+                    <h3 class="title">Chilaquiles Veganos</h3>
+                </div>
+                <div class="vid">
+                    <video src="Videos/Arroz-Chino-Vegano.mp4" muted></video>
+                    <h3 class="title">Cocinando Salmon</h3>
+                </div>
+                <div class="vid">
+                    <video src="Videos/Curry-Vegetariano.mp4" muted>
+                    <track kind="captions" src="captions.vtt" srclang="es" label="Spanish">
+                    </video>
+                    <h3 class="title">Curry Vegetariano</h3>
+                 
+                </div>
+            </div>
+
+    </div>
+
+    <script>
+        let listVideo = document.querySelectorAll('.video-list .vid');
+        let mainVideo = document.querySelector('.main-video video');
+        let title = document.querySelector('.main-video .title');
+        let sub = document.querySelector('.subtitulos');
+
+        listVideo.forEach(video => {
+            video.onclick = () => {
+                listVideo.forEach(vid => vid.classList.remove('active'));
+                video.classList.add('active');
+                if(video.classList.contains('active')){
+                    let src = video.children[0].getAttribute('src');
+                    mainVideo.src = src;
+                    let text = video.children[1].innerHTML;
+                    let track = track.src;
+                }
+            };
+        });
+    </script>
+</body>
+</html>
