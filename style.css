@@ -50,11 +50,11 @@ body {
 }
 
 
-.container .main-video .title {
+/* .container .main-video .title {
     color: red;
     font-size: 103px; 
     z-index: 10;
-}
+} */
 
 .container .video-list {
     width: 300px;
