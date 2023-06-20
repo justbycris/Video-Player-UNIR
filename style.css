@@ -74,9 +74,6 @@ body {
     border-radius: 50px;
 }
 
-video::-webkit-media-controls-panel {
-    background-color: red;
-}
 
 .container .video-list .vid video {
     width: 250px;
