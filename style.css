@@ -46,13 +46,14 @@ body {
     border-radius: 20px;
     margin: 0 auto;
     padding:0;
+    top:90px;
 }
 
 
 .container .main-video .title {
-    color: #333;
-    font-size: 23px; 
-    padding-top: 15px;
+    color: red;
+    font-size: 103px; 
+    z-index: 10;
 }
 
 .container .video-list {
